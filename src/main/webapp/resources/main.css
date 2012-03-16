@@ -1,0 +1,146 @@
+html {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	height:100%;
+}
+body{
+	background-image:url(pics/stripes.png);
+	color:#411D1D;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:15px;
+	margin: 0;
+	padding: 0;
+	height:100%;
+}
+a,a:hover{
+	color:#411D1D;
+	text-decoration:none;
+}
+a:hover,a:focus{
+	text-decoration:underline;
+	outline:none;
+}
+a.banned{
+	color:red;
+}
+h3{
+	font-size:20px;
+	color:#5a5a5a;
+	padding-left:10px;
+	clear:both;
+}
+h4{
+	font-size:18px;
+	color:#5a5a5a;
+	padding-left:10px;
+	clear:both;
+}
+
+#wrap{
+	background:#FFFFFF;
+	width:1000px;
+	min-height:100%;
+	margin:0 auto;
+	float:bottom;
+}
+
+#top{
+	float:top;
+	background-image:url(pics/top.png);
+	vertical-align:bottom;
+	height:67px;
+}
+
+#upload-block{
+	padding-top:5px;
+	float:top;
+	margin-left:auto;
+	margin-right:auto;
+	width:500px;
+	min-height:55px;
+	height:55px;
+	background-image:url(pics/upload-block.png);
+	text-align:center;
+	vertical-align: middle;
+	color:#FFFFFF;
+}
+
+#upload-block-large{
+	padding-top:5px;
+	float:top;
+	margin-left:auto;
+	margin-right:auto;
+	width:500px;
+	min-height:205px;
+	height:205px;
+	background-image:url(pics/upload-block-large.png);
+	text-align:center;
+	vertical-align: middle;
+	color:#FFFFFF;
+}
+
+#picture-block {
+	float:top;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+img.border {
+	padding: 3px 7px 3px 0px ;
+	
+}
+
+.blocks{
+  float:left;
+}
+
+#shareit-box {
+	position:absolute;
+	display:none;
+}
+
+#shareit-header {
+	width:100px;
+}
+
+
+#shareit-body {
+	width:100px; height:100px;
+	background:url(pics/shareit.png);
+}
+
+#shareit-blank {
+	height:20px;
+}
+
+#shareit-url {
+	height:50px;
+	text-align:center;
+}
+
+#shareit-url input.field{
+	width:100px; height:26px;
+	background: transparent url(images/field.gif) no-repeat;
+	border:none; outline:none;
+	padding:7px 5px 0 5px;
+	margin:3px auto;font-size:11px;
+}
+
+#shareit-icon  {
+	height:20px;
+}
+		
+#shareit-icon ul {
+	list-style:none;
+	width:100px;
+	margin:0; padding:0 0 0 8px;
+}
+
+#shareit-icon ul  li{
+	float:left;
+	padding:0 2px;
+}
+
+#shareit-icon ul  li img{
+	border:none;
+}			

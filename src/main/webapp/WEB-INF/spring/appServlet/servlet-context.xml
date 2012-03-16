@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd 
+   http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd 
+   http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd 
+   http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd 
+   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd 
+   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<mvc:annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<context:component-scan base-package="ua.dod.picload.web" />
+	
+	<!-- Internalization and localization support -->
+	<beans:bean id="messageSource"
+	    class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+	    <beans:property name="basename" value="classpath:message" />
+	    <beans:property name="defaultEncoding" value="UTF-8"/>
+	</beans:bean>
+
+	<mvc:interceptors>
+	    <beans:bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+	        <beans:property name="paramName" value="lang" />
+	    </beans:bean>
+	</mvc:interceptors>
+	
+	<beans:bean id="localeResolver"
+	    class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+	    <beans:property name="defaultLocale" value="en"/>
+	</beans:bean>
+	
+	<!-- Multipart Data -->
+	<beans:bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		
+	</beans:bean>
+	
+	<!-- Creates reCaptcha Instance  -->  
+	<beans:bean id="reCaptcha" class="net.tanesha.recaptcha.ReCaptchaImpl">  
+	    <beans:property name="privateKey" value="6LeHv84SAAAAAKbT0ZNc_YDCyPLoPVP6XPZXfNV2" />  
+	       <beans:property name="publicKey" value="6LeHv84SAAAAAPjd_KOYiHwZAuAAkEHfxl2OX-FS" />  
+	       <beans:property name="includeNoscript" value="false" />  
+	</beans:bean>
+	
+</beans:beans>
